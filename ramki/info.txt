@@ -1,0 +1,71 @@
+Objective:
+    The project aims to analyze an image, identify global extremes in pixel values,
+    and draw a square around the detected regions of interest. Additionally, it determains
+    if the image is mostly white and adapts the extreme value calculation accordingly.
+
+Modules:
+    main.py and main2.py:
+        Usage:
+            Initialize with the path to the photo.
+            Extract pixels from a cropped version of the image.
+            Analyze pixel values and find global extremes.
+            Draw a square around identified regions.
+
+    main_math.py:
+        Functionality:
+            Provides mathematical operations for data analysis.
+            Implements the calculation of global extremes and detection of significant changes in
+            pixel values.
+            Ensures proper handling for images that are mostly white.
+
+    square_draw.py:
+        Functionality:
+            Utilizes the Pillow library to draw a square on an image.
+            Accepts start and end coordinates, color, and thickness for customization.
+            Provides a visual representation of detected regions of interest.
+
+    white.py:
+        Functionality:
+            Checks if an image is mostly white.
+            Uses a specified threshold for pixel brightness.
+            Returns a boolean value indicating whether the majority of pixels are considered white.
+
+
+How to Use:
+    main.py and main2.py:
+        Update the PHOTO_PATH variable with the path to your image.
+        Run the script.
+
+    main_math.py:
+        Handles mathematical operations and data analysis.
+        Used by main.py for detecting extremes and significant changes in pixel values.
+
+    square_draw.py:
+        Provides the draw_square function to visually represent detected regions.
+        Used by main.py for drawing squares on the image.
+
+    white.py:
+        Utilized by main.py to determain if the image is mostly white.
+        Customize the threshold parameter to adjust sensitivity.
+
+
+Dependencies:
+    Pillow library (pip install Pillow)
+
+
+Notes:
+    The project is designed to work with images where regions of interest are defined by significant changes in pixel values.
+    Ensure the Pillow library is installed (pip install Pillow).
+    Adjust the threshold in white.py for different image conditions.
+
+
+Conclusion:
+    The project offers a modular and adaptable solution for analyzing and visualizing significant
+    regions in images, considering variations in pixel values and the overall brightness of the image.
+    The implementation is straightforward, making it easy to use and extend.
+
+
+main.py vs main2.py:
+    Key diference is that for mine2 we can get more drastic results, what doest it mean? It simply means
+    that for some images the square might be much smaller and the code determines to catch bigger changes
+    in pixels.
